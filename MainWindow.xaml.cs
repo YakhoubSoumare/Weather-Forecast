@@ -67,7 +67,8 @@ namespace WpfApp1
             AttributeClear();
             if(filNamn != String.Empty)
             {
-                viewListBox.Items.Add(File.ReadAllText(filNamn));
+                string[] fileArray = (File.ReadAllText(filNamn)).Split("},");
+                fileArray.ToList().ForEach(x => viewListBox.Items.Add(x));
             }
         }
 
